@@ -1,101 +1,120 @@
 import Image from "next/image";
+import Link from "next/link";
 
-export default function Home() {
+export default function Responsive() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <section className="py-10">
+        <div className = "ParentContainer mx-auto">
+            <div className = "ChildContainer w-full max-w-lg mx-auto mb-10 bg-red-100">
+                <h1 className = "italic text-center font-bold text-xl underline">Trendings</h1>
+            </div>
+            <div className = "grid  grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 bg-red-100">
+                {Posts()}
+                {Posts01()}
+                {Posts02()}
+                {Posts03()}
+                {Posts04()}
+                {Posts05()}
+            </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+    </section>
+    
   );
+}
+function Posts (){
+    return(
+        <div className = "Items">
+            <div className = "Images">
+                <Image src="/blog6.jpeg" alt="img" width={210} height={210} className= "scale-up-center h-50 mt-1 mx-5 rounded-xl border-zinc-600 shadow-xl"/> 
+            </div>
+            <div className = "Description flex flex-col py-4 px-5 bg-slate-100 text-slate-950 rounded-md border-zinc-600 shadow-lg">
+                <p className = "scale-up-center flex text-left space-x-1 text-sm font-bold px-3 py-2">Code Your Way to Success:{""}</p>
+                <p className = "scale-up-center flex text-left space-x-1 text-sm px-3">Want to learn coding but don’t know where to start? This beginner-friendly...{""}</p>
+                <Link href = "/code">
+                <button className = "readmore scale-up-center hover:bg-sky-400 bg-gray-100 rounded-full shadow-xl m-2 text-slate-950 text-center px-3 py-1">Read More</button>
+                </Link>
+            </div>
+        </div>
+    );
+}
+function Posts01(){
+    return (
+        <div className = "Items">
+            <div className = "Images">
+                <Image src="/blog5.jpeg" alt="img" width={210} height={210} className=" scale-up-center h-50 mt-1 mx-5 rounded-xl border-zinc-600 shadow-xl"/>
+            </div>
+            <div className = "Description flex flex-col py-4 px-5 bg-slate-100 text-slate-950 rounded-md border-zinc-600 shadow-lg">
+            <p className = "scale-up-center flex text-left space-x-1 text-sm font-bold px-3 py-2">Healthy Eating, Mindful Living{""}</p>
+            <p className = "scale-up-center flex text-left space-x-1 text-sm px-3">Mindful eating encourages us to savor each bite, be present, and listen to our bodies. This blog explains...{""}</p>
+            <Link href="/Food">
+            <button className = "readmore scale-up-center hover:bg-sky-400 bg-gray-100 rounded-full shadow-xl m-2 text-slate-950 text-center px-3 py-1">Read More</button>
+            </Link>
+            </div>
+        </div>
+    );
+}
+function Posts02 (){
+    return (
+        <div className = "Items">
+            <div className = "Images">
+            <Image src= "/blog1.jpeg"alt="dimmer" width={210} height={210} className="scale-up-center h-50 mt-1 mx-5 rounded-xl border-zinc-600 shadow-xl"/>
+            </div>
+            <div className = "Description flex flex-col py-4 px-5 bg-slate-100 text-slate-950 rounded-md border-zinc-600 shadow-lg">
+            <p className = "scale-up-center flex text-left space-x-1 text-sm font-bold px-3 py-2">Serenity in Mindfulness:{""}</p>
+            <p className = "scale-up-center flex text-left space-x-1 text-sm px3">In an age of constant connectivity, mental health often takes a backseat. This blog ...{""}</p>
+            <Link href="/Blog">
+            <button className = "readmore scale-up-center hover:bg-sky-400 bg-gray-100 rounded-full shadow-xl m-2 text-slate-950 text-center px-3 py-1">Read More</button>
+            </Link>
+            </div>
+        </div>
+    );
+}
+function Posts03 (){
+    return (
+        <div className = "Items">
+            <div className = "Images">
+            <Image src="/blog3.jpeg"alt="img" width={210} height={210} className="scale-up-center h-50 mt-1 mx-5 rounded-xl border-zinc-600 shadow-xl"/>
+            </div>
+            <div className = "Description flex flex-col py-4 px-5 bg-slate-100 text-slate-950 rounded-md border-zinc-600 shadow-lg">
+            <p className = "scale-up-center flex text-left space-x-1 text-sm font-bold px-3 py-2">The Electric Revolution:{""}</p>
+            <p className = "scale-up-center flex text-left space-x-1 text-sm px-3">As the world shifts towards sustainability, electric cars have gained immense popularity. This post delves ""</p>
+            <Link href="/Electric_car">
+            <button className = "readmore scale-up-center hover:bg-sky-400 bg-gray-100 rounded-full shadow-xl m-2 text-slate-950 text-center px-3 py-1">Read More</button>
+            </Link>
+            </div>
+        </div>
+    );
+}
+function Posts04 (){
+    return (
+        <div className = "Items">
+            <div className = "Images">
+            <Image src="/blog2.jpeg" alt="village name" width={210} height={210} className="scale-up-center h-50 mt-1 mx-5 rounded-xl border-zinc-600 shadow-xl"/>
+            </div>
+            <div className = "Description flex flex-col py-4 px-5 bg-slate-100 text-slate-950 rounded-md border-zinc-600 shadow-lg">
+            <p className = "scale-up-center flex text-left space-x-1 text-sm font-bold px-3 py-2">A Journey into Simplicity and Nature:{""}</p>
+            <p className = "scale-up-center flex text-left space-x-1 text-sm px-3">Village life is a serene escape into simplicity and natural beauty...{""}</p>
+            <Link href="/Life">
+            <button className = "readmore scale-up-center hover:bg-sky-400 bg-gray-100 rounded-full shadow-xl m-2 text-slate-950 text-center px-3 py-1;">Read More</button>
+            </Link>
+            </div>
+        </div>
+    );
+}
+function Posts05 (){
+    return (
+        <div className = "Items">
+            <div className = "Images">
+            <Image src="/blog4.jpeg" alt="img" width={210} height={210} className="scale-up-center h-50 mt-1 mx-5 rounded-xl border-zinc-600 shadow-xl"/>
+            </div>
+            <div className = "Description flex flex-col py-4 px-5 bg-slate-100 text-slate-950 rounded-md border-zinc-600 shadow-lg">
+            <p className = "scale-up-center flex text-left space-x-1 text-sm font-bold px-3 py-2">Simplicity in Design:{""}</p>
+            <p className = "scale-up-center flex text-left space-x-1 text-sm px-3">Less is more—minimalist design focuses on clean lines, neutral colors, and simple but elegant furniture. Learn how to make the most of this...{""}</p>
+            <Link href="/work">
+            <button className = "readmore scale-up-center hover:bg-sky-400 bg-gray-100 rounded-full shadow-xl m-2 text-slate-950 text-center px-3 padding-top: 0px;">Read More</button>
+            </Link>
+            </div>
+        </div>
+      
+    );
 }
